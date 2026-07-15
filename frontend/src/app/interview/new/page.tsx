@@ -28,12 +28,7 @@ export default function NewInterviewPage() {
       formData.append('jobDescription', jobDescription);
       formData.append('resume', resumeFile);
 
-      // Call the backend API (ensure multer parses 'resume')
-      const response = await api.post('/interviews', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      const response = await api.post('/interviews', formData);
 
       if (response.data.success && response.data.data.interview?.id) {
         // Redirect to the active interview room
