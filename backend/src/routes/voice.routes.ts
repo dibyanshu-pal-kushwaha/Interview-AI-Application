@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import * as voiceController from '../controllers/voice.controller';
-import { uploadAudio } from '../middleware/upload.middleware';
+import * as voiceController from '../controllers/voice.controller.js';
+import { uploadAudio } from '../middleware/upload.middleware.js';
 
 const router = Router();
 

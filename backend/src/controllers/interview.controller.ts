@@ -49,7 +49,7 @@ export async function getInterview(
   next: NextFunction
 ): Promise<void> {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     if (!id) {
       throw new AppError("Interview ID is required", 400);
     }
@@ -71,7 +71,7 @@ export async function submitAnswer(
   next: NextFunction
 ): Promise<void> {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     if (!id) {
       throw new AppError("Interview ID is required", 400);
     }
@@ -103,7 +103,7 @@ export async function getReport(
   next: NextFunction
 ): Promise<void> {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     if (!id) {
       throw new AppError("Interview ID is required", 400);
     }

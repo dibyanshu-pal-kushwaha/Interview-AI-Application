@@ -196,7 +196,7 @@ export async function submitAnswer(
       llmScore: scoreResult.llmScore,
       overallScore: scoreResult.overallScore,
       feedback: scoreResult.feedback,
-      criteria: scoreResult.criteria as Record<string, unknown>,
+      criteria: scoreResult.criteria as any,
     },
   });
 

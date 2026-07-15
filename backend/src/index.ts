@@ -6,11 +6,11 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import interviewRoutes from './routes/interview.routes';
-import resumeRoutes from './routes/resume.routes';
-import voiceRoutes from './routes/voice.routes';
-import dashboardRoutes from './routes/dashboard.routes';
-import { globalErrorHandler } from './middleware/error.middleware';
+import interviewRoutes from './routes/interview.routes.js';
+import resumeRoutes from './routes/resume.routes.js';
+import voiceRoutes from './routes/voice.routes.js';
+import dashboardRoutes from './routes/dashboard.routes.js';
+import { globalErrorHandler } from './middleware/error.middleware.js';
 
 dotenv.config();
 

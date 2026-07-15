@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import * as resumeController from '../controllers/resume.controller';
-import { uploadResumeForAnalysis } from '../middleware/upload.middleware';
+import * as resumeController from '../controllers/resume.controller.js';
+import { uploadResumeForAnalysis } from '../middleware/upload.middleware.js';
 
 const router = Router();
 

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import * as interviewController from '../controllers/interview.controller';
-import { uploadResume, uploadAudio } from '../middleware/upload.middleware';
+import * as interviewController from '../controllers/interview.controller.js';
+import { uploadResume, uploadAudio } from '../middleware/upload.middleware.js';
 
 const router = Router();
 

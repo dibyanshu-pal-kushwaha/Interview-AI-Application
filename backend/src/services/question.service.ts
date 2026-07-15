@@ -70,8 +70,7 @@ Return ONLY the JSON object.`;
       throw new AppError("AI returned invalid question format", 500);
     }
 
-    // Validate and normalize each question
-    const validatedQuestions: GeneratedQuestion[] = questions.map((q, index) => ({
+    const validatedQuestions: GeneratedQuestion[] = questions.map((q: any, index) => ({
       title: q.title || `Question ${index + 1}`,
       description: q.description || q.question || "",
       type: validateQuestionType(q.type),
