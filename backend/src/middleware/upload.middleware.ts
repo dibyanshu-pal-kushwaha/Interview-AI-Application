@@ -3,9 +3,17 @@ import path from "path";
 import { v4 as uuidv4 } from "uuid";
 import { AppError } from "../types/index.js";
 
+import fs from "fs";
+
+// Ensure uploads directory exists
+const uploadDir = "./uploads/";
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => {
-    cb(null, "./uploads/");
+    cb(null, uploadDir);
   },
   filename: (_req, file, cb) => {
     const ext = path.extname(file.originalname);
