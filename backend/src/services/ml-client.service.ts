@@ -9,9 +9,6 @@ class MLClientService {
     this.client = axios.create({
       baseURL,
       timeout: 60000, // 60 second timeout for ML operations
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
   }
 
