@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import axios from 'axios';
 import api from '@/lib/api';
 import AudioRecorder from '@/components/AudioRecorder';
 import WebcamView from '@/components/WebcamView';
@@ -77,8 +78,9 @@ export default function ActiveInterviewPage() {
       const formData = new FormData();
       formData.append('audio', audioBlob, 'answer.webm');
 
-      const res = await api.post('/voice/transcribe', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      // Use raw axios to prevent api instance defaults
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/voice/transcribe`, formData, {
+        headers: { 'Content-Type': undefined },
       });
 
       if (res.data.success) {

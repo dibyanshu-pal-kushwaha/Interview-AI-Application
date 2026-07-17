@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 import api from '@/lib/api';
 
 export default function NewInterviewPage() {
@@ -28,7 +29,8 @@ export default function NewInterviewPage() {
       formData.append('jobDescription', jobDescription);
       formData.append('resume', resumeFile);
 
-      const response = await api.post('/interviews', formData);
+      // Use raw axios to prevent api instance defaults (like application/json) from interfering
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/interviews`, formData);
 
       if (response.data.success && response.data.data.interview?.id) {
         // Redirect to the active interview room
