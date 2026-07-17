@@ -25,7 +25,6 @@ class MLClientService {
         "/transcribe",
         formData,
         {
-          headers: { "Content-Type": "multipart/form-data" },
           timeout: 120000,
         }
       );
