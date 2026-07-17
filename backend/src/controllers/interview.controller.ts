@@ -4,7 +4,7 @@ import * as interviewService from "../services/interview.service.js";
 import { AppError } from "../types/index.js";
 
 const createInterviewSchema = z.object({
-  jobDescription: z.string().min(10, "Job description must be at least 10 characters"),
+  jobDescription: z.string().min(2, "Job description must be at least 2 characters"),
   jobRole: z.string().min(2, "Job role must be at least 2 characters"),
 });
 
